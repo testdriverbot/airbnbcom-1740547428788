@@ -1,0 +1,25 @@
+version: 4.2.12
+session: 67bea7bd65b243a17bd244e0
+steps:
+  - prompt: Click on a property listing.
+    commands:
+      - command: hover-text
+        text: Rockbridge, Ohio
+        description: first property listing
+        action: click
+  - prompt: Verify property details are visible.
+    commands:
+      - command: assert
+        expect: Entire cabin in Rockbridge, Ohio
+  - prompt: Click the "Reserve" or equivalent button.
+    commands:
+      - command: hover-text
+        text: Reserve
+        description: reserve button on the property listing page
+        action: click
+  - prompt: >-
+      Assert that a booking confirmation is displayed or booking details are
+      saved.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: Confirm and pay
