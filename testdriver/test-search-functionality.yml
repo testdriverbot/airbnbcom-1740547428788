@@ -1,0 +1,33 @@
+version: 4.2.12
+session: 67bea7c565b243a17bd244e5
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Search destinations" input.
+    commands:
+      - command: hover-text
+        text: Search destinations
+        description: search input field on the Airbnb homepage
+        action: click
+  - prompt: Enter a destination name.
+    commands:
+      - command: hover-text
+        text: Search destinations
+        description: search input field on the Airbnb homepage
+        action: click
+      - command: type
+        text: New York
+  - prompt: Click the search icon.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search button next to the destination input
+        action: click
+  - prompt: >-
+      Assert that search results are displayed relevant to the destination
+      entered.  # Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: search results contain "New York"
