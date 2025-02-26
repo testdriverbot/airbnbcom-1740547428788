@@ -1,0 +1,73 @@
+version: 4.2.12
+session: 67bea7cdf9cc135c0cf67feb
+steps:
+  - prompt: Click on the user icon or "Log In" button.
+    commands:
+      - command: hover-image
+        description: user icon in the top right corner
+        action: click
+  - prompt: Enter valid credentials.
+    commands:
+      - command: hover-text
+        text: Sign in to Chrome
+        description: sign in button in the dropdown menu
+        action: click
+  - prompt: Enter valid credentials.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+      - command: type
+        text: testuser@example.com
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: password123
+      - command: hover-text
+        text: Next
+        description: next button
+        action: click
+  - prompt: Enter valid credentials.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+      - command: type
+        text: testuser@example.com
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: password123
+      - command: hover-text
+        text: Next
+        description: next button
+        action: click
+  - prompt: Enter valid credentials.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+      - command: type
+        text: validuser@example.com
+      - command: press-keys
+        keys:
+          - tab
+      - command: type
+        text: validpassword123
+      - command: hover-text
+        text: Next
+        description: next button
+        action: click
+      - command: hover-text
+        text: Email or phone
+        description: email input field
+        action: click
+  - prompt: >-
+      Assert that the user is logged in successfully and redirected to the home
+      page.  # Use the content of the file from the environment
+    commands: []
