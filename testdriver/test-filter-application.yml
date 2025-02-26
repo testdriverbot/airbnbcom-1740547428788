@@ -1,0 +1,39 @@
+version: 4.2.12
+session: 67bea7c365b243a17bd244e3
+steps:
+  - prompt: Click on the "Filters" button.
+    commands:
+      - command: hover-text
+        text: Filters
+        description: filters button next to the search options
+        action: click
+  - prompt: Select different filters like price range and house type.
+    commands:
+      - command: hover-text
+        text: Room
+        description: room type filter option
+        action: click
+      - command: hover-text
+        text: Minimum
+        description: minimum price input
+        action: click
+      - command: type
+        text: 50
+      - command: hover-text
+        text: Maximum
+        description: maximum price input
+        action: click
+      - command: type
+        text: 300
+  - prompt: Apply the filters.
+    commands:
+      - command: hover-text
+        text: Show 95 rooms
+        description: apply filters button at the bottom of the filter panel
+        action: click
+  - prompt: >-
+      Assert that search results update according to the selected filters.  #
+      Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: the search results reflect the selected filters
